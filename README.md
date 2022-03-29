@@ -28,7 +28,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [Solution](https://github.com/Makson19/huddle-landing-page-with-a-single-introductory-section)
-- Live Site URL: [Live site](https://your-live-site-url.com)
+- Live Site URL: [Live site](https://makson19.github.io/huddle-landing-page-with-a-single-introductory-section/)
 
 ## My process
 
