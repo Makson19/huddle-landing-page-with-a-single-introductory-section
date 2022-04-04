@@ -1,11 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:wght@400;600&display=swap');
+/* ===== RESET ===== */
 
-* {
+*, ::after, ::before {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
+/* ===== Variables ===== */
 :root {
     --violet: hsl(257, 40%, 49%);
     --soft-magenta: hsl(300, 69%, 71%);
@@ -15,172 +16,229 @@
     --font-body: 'Open Sans', sans-serif;
 }
 
+/* ===== Body ===== */
 body {
-    font-size: 15px;
     background-color: var(--violet);
     background-image: url("../images/bg-mobile.svg");
     background-repeat: no-repeat;
     background-size: 100%;
+    background-position: top center;
+}
+
+/* ===== Container ===== */
+.container {
+    max-width: 98rem;
+    margin: 0 2.2rem;
+    position: relative;
 }
 
 
-/* ===== HEADER ===== */
+/* ===== Header ===== */
 .header {
     display: flex;
-    align-items: center;
-    margin: 2rem 0;
-    padding-left: 2.5rem;
+    justify-content: flex-start;
+    padding: 2rem 0;
 }
 
 .header .logo {
     width: 9rem;
 }
 
-.header .logo img {
+.header .logo > img {
     width: 100%;
 }
 
 
-/* ===== CONTENT ===== */
-.main-content {
-    /* height: 75vh; */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 1.5rem 2.5rem;
-}
-
-.container-image .image {
-    min-width: 70%;
-}
-
-.image img {
-    width: 100%;
-}
-
+/* ===== Content ===== */
 .content {
-    max-width: 27.8rem; 
-    margin-top: 2.5rem;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: 1rem;
+    justify-content: center;
+    align-items: center;;
+    margin-top: 1.7rem;
+    height: 100%;
 }
 
-.content h1 {
+
+.content .col-1 .wrapper-image {
+    min-width: 85%;
+    max-width: 100%;
+}
+
+.content .col-1 .wrapper-image > img {
+    width: 100%;
+}
+
+
+.content .col-2 {
+    text-align: center;
+    padding-top: 3.5rem;
+}
+
+.content .col-2 .wrapper-text > h1 {
     font-family: var(--font-heading);
     font-weight: 600;
-    font-size: 1.6rem;
+    font-size: 1.7rem;
     color: var(--white);
-    text-align: center;
+    margin-bottom: 1rem;
 }
 
-.content p {
+.content .col-2 .wrapper-text > p {
     font-family: var(--font-body);
     font-weight: 400;
     color: var(--white);
-    text-align: center;
-    padding: 0.3rem;
-    line-height: 1.5;
+    line-height: 1.7;
+    margin-bottom: 2rem;
 }
 
-.content a {
-    text-decoration: none;
-    border: 0;
-    background-color: var(--white);
-    color: var(--violet);
-    padding: 0.6rem 4rem;
-    border-radius: 30px;
+.content .col-2 .wrapper-text > a {
     font-family: var(--font-heading);
     font-weight: 400;
+    text-decoration: none;
+    background-color: var(--white);
+    color: var(--violet);
+    padding: 0.7rem 3rem;
+    border-radius: 30px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+    
 }
 
-.content a:hover {
+.content .col-2 .wrapper-text > a:hover {
     background-color: var(--soft-magenta);
     color: var(--white);
-    transition: all 300ms ease;
+    transition: background-color 200ms linear;
 }
 
 
-/* ===== FOOTER ===== */
+/* ===== Footer ===== */
 .footer {
-    margin: 3rem 0;
+    margin-top: 5rem;
+    margin-bottom: 2rem;
     display: flex;
     justify-content: center;
+}
+
+.footer .footer-list {
+    list-style: none;
+    display: flex;
     gap: 0.8rem;
 }
 
-.footer a {
+.footer .footer-list .footer-item > a {
     text-align: center;
     text-decoration: none;
-    padding: 0.5rem;
     color: var(--white);
-    border: 1px solid var(--white);
+    border: 1px solid #FFF;
     border-radius: 50%;
+    padding: 0.3rem;
 }
 
-.footer a:hover {
+.footer .footer-list .footer-item > a:hover {
     color: var(--soft-magenta);
     border-color: var(--soft-magenta);
-    transition: all 300ms ease;
+    transition: color 200ms linear, border-color 200ms linear;
 }
 
-.footer > a > .fa-brands {
-        width: 1rem;
-        height: 1rem;
+.footer .footer-list .footer-item > a > .fa-brands {
+    font-size: 0.8rem;
+    width: 1rem;
+    height: 1rem;
 }
 
 
-/* ===== MEDIA QUERIES ===== */
-@media (min-width: 1000px) {
+/* ===== Media Queries ===== */
+@media (min-width: 1024px) { 
     body {
-        height: 100vh;
         background-image: url("../images/bg-desktop.svg");
-        background-repeat: no-repeat;
-        background-size: 100%;
+        background-size: cover;
         background-position: center;
-    }
-
-    .header {
-        height: 15vh;
-        margin: 0;
-        padding-left: 6rem;
-    }
-
-    .main-content {
-        height: 75vh;
-        flex-direction: row;
+        min-height: 100vh;
+        display: flex;
         justify-content: center;
-        gap: 5rem;
-        padding: 0 1.5rem;
+        align-items: center;
     }
+
+    .container {
+        margin: 0 4rem;
+    }
+
+    .header .logo {
+        width: 11rem;
+        margin-top: 1.5rem;
+    } 
 
     .content {
+        flex-direction: row;
         align-items: flex-start;
-        margin: 0;
-        padding-bottom: 8rem;
     }
 
-    .content h1 {
-        font-size: 2.2rem;
+    .content .col-1 {
+        width: 55%;
+    }
+
+    .content .col-1 .wrapper-image {
+        padding-right: 2rem; 
+    }
+    
+    .content .col-2 {
+        width: 45%;
         text-align: left;
-        
+        padding: 0;
+    } 
+
+    .footer {
+        margin-top: 2rem;
+        justify-content: flex-end;
+    }
+}
+
+
+@media (min-width: 1280px) {
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
-    .content p {
+    .container {
+        min-height: 45rem;
+    }
+
+    .header .logo {
+        width: 15rem;
+        margin-top: 2rem;
+    }
+
+    .content .col-2 .wrapper-text > h1 {
+        font-size: 2.5rem;
+        max-width: 33rem;
+    }
+
+    .content .col-2 .wrapper-text > p {
+        padding-left: 0;
+        max-width: 29rem;
+    }
+
+    .footer {
+        margin-top: 1rem;
+    }
+}
+
+@media (min-width: 1440px) {
+    .container {
+        min-height: 56rem;
+    }
+
+    .content .col-2 {
+        padding: 3rem 2rem;
         text-align: left;
-    }
-
-    .content a {
-        box-shadow: 2px 2px 8px #000;
-        padding: 0.8rem 3.5rem;
     }
 
     .footer {
         justify-content: flex-end;
-        padding-top: 1.5rem;
-        padding-right: 5rem;
         margin: 0;
+        position: absolute;
+        bottom: 2rem;
+        right: 1rem;
     }
-
 }
