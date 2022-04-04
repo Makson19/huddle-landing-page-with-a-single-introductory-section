@@ -226,7 +226,7 @@ body {
 
 @media (min-width: 1440px) {
     .container {
-        min-height: 56rem;
+        min-height: 50rem;
     }
 
     .content .col-2 {
