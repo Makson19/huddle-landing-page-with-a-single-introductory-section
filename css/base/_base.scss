@@ -1,0 +1,52 @@
+@use "../abstracts/" as *;
+
+*, ::before, ::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html, body, h1 {
+    font-size: 62.5%;
+}
+
+body {
+    background: url("../../images/bg-mobile.svg");
+    background-color: $violet;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: top;
+    min-height: 100vh;
+    @include flex(column, center, center);
+}
+
+/**
+ * Screen Reader Class
+ * 
+ * To hide content visually.
+ *
+ * For more information: https://gist.github.com/ffoodd/000b59f431e3e64e4ce1a24d5bb36034
+ */
+ .sr-only {
+    position: absolute !important;
+    margin: -1px !important;
+    -webkit-clip-path: inset(50%) !important;
+    clip-path: inset(50%) !important;
+    border: 0 !important;
+    padding: 0 !important;
+    width: 1px !important;
+    height: 1px !important;
+    overflow: hidden !important;
+    white-space: nowrap !important;
+}
+
+
+@media (min-width: 376px) {
+    body {
+        background: url("../../images/bg-desktop.svg");
+        background-color: $violet;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+}

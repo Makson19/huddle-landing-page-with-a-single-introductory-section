@@ -1,0 +1,12 @@
+@use "../abstracts" as *;
+@use "../base" as *;
+@use "../layout" as *;
+
+.container {
+    max-width: 144rem;
+    min-height: 100vh;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
